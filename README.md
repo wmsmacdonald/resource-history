@@ -2,10 +2,8 @@
 Keeps track of changes to text so you can pull specific versions and patch an old version
 
 * Retrieve any version
-* Get patches to transform any version to the last version added
+* Get [patches](https://code.google.com/p/google-diff-match-patch/) to transform any version to the last version added
 * Changes stored with deltas to save space
-
-The patch obje are explained in [google-difff-patch-match] (https://code.google.com/p/google-diff-match-patch/).
 
 ```javascript
 var TextHistory = require('text-history');
