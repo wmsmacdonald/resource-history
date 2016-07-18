@@ -13,7 +13,11 @@
   "keywords": [
     "version",
     "versioning",
-    "histories"
+    "histories",
+    "patch",
+    "diff",
+    "match",
+    "patch"
   ],
   "author": "William MacDonald",
   "license": "MIT",
