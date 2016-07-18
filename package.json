@@ -1,0 +1,32 @@
+{
+  "name": "text-history",
+  "version": "1.0.0",
+  "description": "Keeps track of changes to text so you can pull specific versions and patch an old version",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmsmacdonald/text-history.git"
+  },
+  "keywords": [
+    "version",
+    "versioning",
+    "histories"
+  ],
+  "author": "William MacDonald",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wmsmacdonald/text-history/issues"
+  },
+  "homepage": "https://github.com/wmsmacdonald/text-history#readme",
+  "dependencies": {
+    "diff-match-patch": "^1.0.0",
+    "node-uuid": "^1.4.7"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}
