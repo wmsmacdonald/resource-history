@@ -2,6 +2,7 @@
 
 const assert = require('chai').assert;
 const DiffMatchPatch = require('diff-match-patch');
+const md5 = require('md5');
 
 const TextHistory = require('../');
 
@@ -17,8 +18,15 @@ describe('TextHistory', function(){
     });
   });
   describe('#addVersion', function() {
-    it('return id', function() {
-      assert.isString(TextHistory().addVersion(new Date().toString()));
+    it('return md5 hash as id', function() {
+      let text = new Date().toString();
+      assert.strictEqual(TextHistory().addVersion(text), md5(text));
+    });
+    it('return id with custom function', function() {
+      assert.isNumber(
+        TextHistory(text => Math.floor(Math.random() * Number.MAX_SAFE_INTEGER))
+          .addVersion(new Date().toString())
+      );
     });
   });
   describe('#getVersion', function() {
