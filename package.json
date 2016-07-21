@@ -27,8 +27,7 @@
   "homepage": "https://github.com/wmsmacdonald/text-history#readme",
   "dependencies": {
     "diff-match-patch": "^1.0.0",
-    "node-uuid": "^1.4.7",
-    "vcdiff": "github:baranov1ch/node-vcdiff"
+    "node-uuid": "^1.4.7"
   },
   "devDependencies": {
     "chai": "^3.5.0",
