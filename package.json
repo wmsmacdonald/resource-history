@@ -1,6 +1,6 @@
 {
   "name": "text-history",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Keeps track of changes to text so you can pull specific versions and patch an old version",
   "main": "index.js",
   "scripts": {
