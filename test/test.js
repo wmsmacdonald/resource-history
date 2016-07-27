@@ -41,6 +41,9 @@ describe('TextHistory', function(){
     it('get right text', function() {
       ids.forEach((id, index) => assert.strictEqual(textHistory.getVersion(id), texts[index]));
     });
+    it('unknown version is undefined', function() {
+      assert.isUndefined(textHistory.getVersion('unknown id'));
+    });
   });
   describe('#getPatches', function() {
     const NUM_VERSIONS = 10;
