@@ -26,7 +26,7 @@ Construct a new TextHistory object.
 ### history.addVersion(text)
 Add a new, updated version of the text. Returns a string id used to access the version again.
 ### history.getVersion(id)
-Retrieve text from the version of id.
+Retrieve text from the version of id. Returns `undefined` if version id does not exist.
 ### history.lastVersion
 The text of the latest version (last added) in the history.
 ### history.getPatches(id)
