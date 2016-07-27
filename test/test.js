@@ -3,6 +3,7 @@
 const assert = require('chai').assert;
 const DiffMatchPatch = require('diff-match-patch');
 const md5 = require('md5');
+const sha1 = require('sha1');
 
 const TextHistory = require('../');
 
@@ -23,10 +24,8 @@ describe('TextHistory', function(){
       assert.strictEqual(TextHistory().addVersion(text), md5(text));
     });
     it('return id with custom function', function() {
-      assert.isNumber(
-        TextHistory(text => Math.floor(Math.random() * Number.MAX_SAFE_INTEGER))
-          .addVersion(new Date().toString())
-      );
+      let text = new Date().toString();
+      assert.strictEqual(TextHistory(sha1).addVersion(text), sha1(text));
     });
   });
   describe('#getVersion', function() {
@@ -43,6 +42,18 @@ describe('TextHistory', function(){
     });
     it('unknown version is undefined', function() {
       assert.isUndefined(textHistory.getVersion('unknown id'));
+    });
+  });
+  describe('#hasVersion', function() {
+    it('returns true if version exists', function() {
+      let textHistory = new TextHistory();
+      let id = textHistory.addVersion(new Date().toString());
+      assert(textHistory.hasVersion(id));
+    });
+    it("returns false if version doesn't exist", function() {
+      let textHistory = new TextHistory();
+      let id = textHistory.addVersion(new Date().toString());
+      assert.isFalse(textHistory.hasVersion('nonexisting id'));
     });
   });
   describe('#getPatches', function() {
